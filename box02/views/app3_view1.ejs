@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>rez2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+	<script src="/assets/todo-list.js"></script>
+</head>
+<body>
+<!-- <h1>rez2_collection2</h1> -->
+	<div>
+		<div id="todo-table" class="test" >
+			<form>
+				<input type="text" name="item" placeholder="Add new item... " required /> 
+				<button type="submit">Add Item</button>
+			</form>
+			<ol>
+				<% for(var i=0; i < todos.length; i++){ %>
+				<li><%= todos[i].item %></li>
+				<% } %>
+			</ol>
+		</div>
+		<div id="todo-table-2" class="test" >
+		<form>
+			<input type="text" name="item" placeholder="Add new item... " required /> 
+			<button type="submit">Add Item</button>
+		</form>
+		<ol>
+			<% for(var i=0; i < todos.length; i++){ %>
+			<li><%= todos[i].item %></li>
+			<% } %>
+		</ol>
+	</div>
+	</div>
+</body>
+</html>
