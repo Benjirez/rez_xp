@@ -1,0 +1,28 @@
+body{
+    background: #0d1521;
+    font-family: arial;
+	font-size: 20px;
+    color: #989898;
+}
+
+input[type="text"]{
+    width: 76%;
+    padding: 8px;
+    border: 0;
+    font-size: 20px;
+    color: #444444;
+}
+
+li{
+    width: 70%;
+	padding: 6px;
+ }
+
+.test{
+	float: left;
+	width: 50%;
+}
+
+li:hover{
+    text-decoration: line-through;
+}

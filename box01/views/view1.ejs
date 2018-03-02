@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>view1</title>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+	<script src="views/view1.js"></script>
+</head>
+<body>
+	<div>
+		<div id="todo-table" class="test" >
+			<form>
+				<input type="text" name="item" placeholder="Add new item... " required /> 
+				<button type="submit">Add Item</button>
+			</form>
+			<ol>
+				<% for(var i=0; i < todos.length; i++){ %>
+				<li><%= todos[i].item %></li>
+				<% } %>
+			</ol>
+		</div>
+		<div id="todo-table-2" class="test" >
+		<form>
+			<input type="text" name="item" placeholder="Add new item... " required /> 
+			<button type="submit">Add Item</button>
+		</form>
+		<ol>
+			<% for(var i=0; i < todos.length; i++){ %>
+			<li><%= todos[i].item %></li>
+			<% } %>
+		</ol>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "rez_xp",
+  "version": "1.0.0",
+  "description": "working on xp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benjirez/rez_xp.git"
+  },
+  "author": "Benjirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "git+https://github.com/Benjirez/rez_xp/issues"
+  },
+  "homepage": "git+https://github.com/Benjirez/rez_xp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongoose": "3.8.40",
+    "regexp-clone": "0.0.1"
+  },
+  "devDependencies": {}
+}
