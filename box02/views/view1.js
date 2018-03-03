@@ -3,12 +3,12 @@ $(document).ready(function(){
   $('form').on('submit', function(){
 	console.log('submitting yo');
       var item = $('form input');
-      var todo = {item: item.val()};
+      var todoX = {item: item.val()};
 
       $.ajax({
         type: 'POST',
-        url: '/todo',
-        data: todo,
+        url: '/',
+        data: todoX,
         success: function(data){
           //do something with the data via front-end framework
           location.reload();
@@ -20,13 +20,15 @@ $(document).ready(function(){
   });
 
   $('li').on('click', function(){
-      var item = $(this).text().replace(/ /g, "-");
+      var item = $(this).text(); //.replace(/ /g, "-");
+	  console.log(item);
       $.ajax({
         type: 'DELETE',
-        url: '/todo/' + item,
+        url: '/' + item,
         success: function(data){
           //do something with the data via front-end framework
           location.reload();
+		  
         }
       });
   });

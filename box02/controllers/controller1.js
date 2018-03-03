@@ -21,18 +21,20 @@ module.exports = function(xsvr){
 	});
 
 	//create new todoModel with data from req.body, push to db, reload view
-	xsvr.post('/todo', urlencodedParser, function(req, res){
+	xsvr.post('/', urlencodedParser, function(req, res){
 		var newTodo = model1(req.body).save(function(err, data){
 			if (err) throw err;
 			res.json(data);
+			console.log(data);
 		});
 	});
 
-	xsvr.delete('/todo/:item', function(req, res){
+	xsvr.delete('/:item', function(req, res){
 		//delete requested item from db
 		model1.find( {item: req.params.item.replace(/\-/g, " ")} ).remove(function(err, data){
 			if (err) throw err;
 			res.json(data);
+			console.log(data);
 		});
 	});
 
