@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	
+  $( "#drag1" ).draggable();
+  $( "#drag2" ).draggable();
 
   $('#form1').on('submit', function(){
 	console.log('submitting yo');

@@ -4,12 +4,14 @@
 	<title>view1</title>
 	<meta charset="UTF-8">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 	<script src="views/view1.js"></script>
 </head>
 <body>
 	<div>
 		<div id="todo-table" class="test" >
+			<div id="drag1" class="ui-widget-content">
 			<form id="form1">
 				<input type="text" name="item" placeholder="rez2_collection1... " required /> 
 				<button type="submit">add</button>
@@ -19,16 +21,19 @@
 				<pre><li name="<%= todos[i]._id %>"> <%= todos[i].item %></li></pre>
 				<% } %>
 				
-			</ol>
+			</ol class="scroller">
+			</div>
+			<div id="drag2" class="ui-widget-content">
 			<form id="form2">
 				<input type="text" name="item" placeholder="rez2_collection2..." required /> 
 				<button type="submit">add</button>
 			</form>
-			<ol>
+			<ol class="scroller">
 			<% for(var i=0; i < todos2.length; i++){ %>
 			<pre><li name="<%= todos2[i]._id %>"> <%= todos2[i].item %></li></pre>
 			<% } %>
 			</ol>
+			</div>
 		</div>
 		
 	</div>
