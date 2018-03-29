@@ -1,0 +1,22 @@
+// sketch the app
+
+available controls (reletive to active frame)are displayed (at page bottom)
+select multiple frames?
+
+controls:
+
+	with nothing/background selected:
+		add a frame (panel button) - adds a selected frame (selected frame/s is highlighted)
+		
+	with a frame selected:
+		delete frame (panel button)
+		list collections
+		revert - returns to last stored state
+		select collection 
+		
+	with collections listed:
+		select collection from list
+		add new collection 
+		
+	with collection selected:
+		list documents
