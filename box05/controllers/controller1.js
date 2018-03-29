@@ -44,31 +44,29 @@ module.exports = function(xsvr){
 			//res.render('view1', {todos: data, todos2: data2});
 
 			var text = "";
-
-			function treeMe(myObj){
-				var x;
-				for (x = 0; x < myObj.length; x++){
-					text += "<h1>" + myObj[x].title +"</h1>";
-					var y;
-					for (y = 0; y <= myObj[x].texts.length; y++){
-						//if( myObj[x].texts[y] ){ text += "" + myObj[x].texts[y] + "<br>";}
-						
-							if( myObj[x].texts[y] ){
-							var z;
-							for (z = 0; z < myObj[x].texts[y].text.length; z++){
-								if( myObj[x].texts[y].text[z].name ){ text += ""+(z+1)+'. ' + myObj[x].texts[y].text[z].name + "<br><br>";}
-							}
-						
-						}
-						
+			
+	// model3 data structure
+	// myData[ group index ].texts[0].text[template index].name,keyword,body,_shortcut,_type
+			
+			function treeMe(myData){
+				
+				var myGroup;
+				for (myGroup = 0; myGroup < myData.length; myGroup++){
+					text += "<h1>"+ (myGroup +1)+". " + myData[myGroup].title +"</h1>";
+					var myTemplate;
+					for (myTemplate = 0; myTemplate < myData[myGroup].texts[0].text.length; myTemplate++){
+					text += "<b>"+ (myTemplate +1)+". </b>" + myData[myGroup].texts[0].text[myTemplate].name +" - ";
+					text += "<b>" + myData[myGroup].texts[0].text[myTemplate].keyword +"</b><br><br>";
+					text += "" + myData[myGroup].texts[0].text[myTemplate].body +"<br><br>";
 					}
 				}
 			}
-
-			treeMe(data);
+				
 			
-			text = text.replace(/\n\r/g, '<br>');
-			text = text.replace(/\\n/g, '');
+			treeMe(data);
+			//regex to clean up data... no longer necessary.
+			//text = text.replace(/\n\r/g, '<br>');
+			//text = text.replace(/\\n/g, '');
 
 			res.send(text);
 
