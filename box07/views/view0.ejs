@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>view1</title>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
+	<script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+	<script src="views/view0.js"></script>
+</head>
+<body>
+
+			<form id="form1">
+				<input type="text" name="item" placeholder="... " required />
+				<button type="submit">add</button>
+			</form>
+			<% for (var i=0; i< myData.length; i++){ %><%= "myData["+ i +"]:" %><br>
+				<% for (var j=0; j< myData[i].a1.length; j++){ %>&nbsp &nbsp<%= "myData[" + i + "].a1[" +j +"]: " + myData[i].a1[j]%><br><%}%><br><br>
+				<% } %>
+</body>
+</html>
