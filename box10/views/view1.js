@@ -3,6 +3,7 @@ $(document).ready(function(){
   $( "#drag1" ).draggable();
   $( "#drag2" ).draggable();
   $( "#drag3" ).draggable();
+  
 
   $('#form1').on('submit', function(){
 	console.log('submitting yo');
@@ -63,5 +64,17 @@ $(document).ready(function(){
 	circle.y = 50;
 	stage.addChild(circle);
 	stage.update();
+
+	
+	$.contextMenu({
+		// define which elements trigger this menu
+		selector: "#pork",
+		// define the elements of the menu
+		items: {
+			foo: {name: "Foo", callback: function(key, opt){ alert("Foo!"); }},
+			bar: {name: "Bar", callback: function(key, opt){ alert("Bar!") }}
+		}
+		// there's more, have a look at the demos and docs...
+	});
 
 });
