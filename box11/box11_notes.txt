@@ -1,0 +1,9 @@
+nodejs app 
+
+used browserify to convert view1.js into bundle.js which allows the use of nodejs modules in the browser via var module_name = require('module_name');
+
+app.js is the entry point
+
+conroller1 sets up routes
+
+view1.ejs loads bundle.js via <script src="views/bundle.js"></script>

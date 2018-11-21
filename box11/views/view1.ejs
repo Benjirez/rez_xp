@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>view1</title>
+	<title>New Tab</title>
 	<meta charset="UTF-8">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
 	<script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
 	<script src="jquery.contextMenu.min.js"></script>
 	<link href="styles.css" rel="stylesheet" type="text/css" />
-	<script src="views/view1.js"></script>
+	<script src="views/bundle.js"></script>
 </head>
 <body>
 	<div>     
-			<div id="drag3" class="ui-widget-content">
-		<canvas id="demoCanvas" width="100" height="100"></canvas>
-	</div>
+		<span id="txOut1">.</span>
+		<!--
+		<div id="drag3" class="ui-widget-content">
+				<canvas id="demoCanvas" width="100" height="100"></canvas>
+		</div>
 		<span id="pork">Belly Button Window</span>
 		<div id="todo-table" class="test" >
 			<div id="drag1" class="ui-widget-content">
@@ -41,8 +43,14 @@
 			</ol>
 			</div>
 		</div>
+		-->
 		
 	</div>
+	<script src="mousetrap.min.js"></script>
+	<script src="bundle.js"></script>
+	<script>
+		// Mousetrap.bind('1 2 3', function() { console.log('you pressed 1 and 2 and 3'); });
+	</script>
 
 </body>
 </html>

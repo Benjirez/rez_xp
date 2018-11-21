@@ -1,5 +1,10 @@
+
 body{
-    background: #0d1521;
+    //background: #0d1521;
+	
+	//background-image: url("thunderbirdWrite2.png");
+	background-color: #0d1521;
+	background-repeat: no-repeat;
     font-family: arial;
 	font-size: 20px;
     color: #989898;

@@ -1,4 +1,17 @@
+//var Mousetrap = require('mousetrap');
+var copy = require('clipboard-copy');
+
 $(document).ready(function(){
+	
+	Mousetrap.bind('1 2 3', function() { 
+	
+		console.log('you pressed one, two and three'); 
+		copy('...this is Chewy and I am making the jump to hyper-space')
+	  
+	});
+	
+	//var Mousetrap = require('mousetrap');
+  $( "#txOut1" ).html("chewy");
 	
   $( "#drag1" ).draggable();
   $( "#drag2" ).draggable();
@@ -76,5 +89,7 @@ $(document).ready(function(){
 		}
 		// there's more, have a look at the demos and docs...
 	});
+	
+	
 
 });

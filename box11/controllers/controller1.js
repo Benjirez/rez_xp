@@ -3,6 +3,9 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extend: false});
 
+var Mousetrap = require('mousetrap');
+var copy = require('clipboard-copy');
+
 mongoose.connect('mongodb://'+ dbcreds.user +':' + dbcreds.pw + '@ds051913.mlab.com:51913/rezdb');
 var model1 = mongoose.model('rez2_collection1', mongoose.Schema({item: String}) ); //todoModel
 var model2 = mongoose.model('rez2_collection2', mongoose.Schema({item: String}) ); //todoModel
