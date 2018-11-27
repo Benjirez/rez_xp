@@ -1,4 +1,4 @@
-//var Mousetrap = require('mousetrap');
+var Mousetrap = require('mousetrap');
 var copy = require('clipboard-copy');
 
 $(document).ready(function(){
