@@ -181,6 +181,30 @@ module.exports = function(xsvr){
 		});
 		console.log('qt called');
 	});
+	
+	
+		// get todo data and render view
+	xsvr.get('/wig1', function (req, res) {
+		var data = model1.find({}, function (err, data) {
+			if (err) throw err;
+			//console.log('into the shoot flyboy');
+			//res.render('view1', {todos: data, todos2: data2});
+
+			var data2 = model2.find({}, function (err, data2) {
+				if (err) throw err;
+				//console.log('into the shoot flyboy');
+				res.render('view_Wig1', { todos: data, todos2: data2 });
+
+			});
+
+		});
+
+
+
+
+		console.log('controller1 called');
+	});
+	
 
 	// get todo data and render view
 	xsvr.get('/', function(req, res){
