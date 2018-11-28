@@ -7,12 +7,13 @@ $(document).ready(function(){
 	Mousetrap.bind('1 2 3', function() { 
 	
 		console.log('you pressed one, two and three'); 
-		copy('...this is Chewy and I am making the jump to hyper-space')
+		copy('...this is Chewy and I am making the jump to hyper-space');
+		$( "#txOut1" ).html( "bang!" );
 	  
 	});
 	
 	//var Mousetrap = require('mousetrap');
-  $( "#txOut1" ).html("chewy");
+  //$( "#txOut1" ).html("chewy");
 	
   $( "#drag1" ).draggable();
   $( "#drag2" ).draggable();
