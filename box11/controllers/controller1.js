@@ -183,7 +183,7 @@ module.exports = function(xsvr){
 	});
 	
 	
-		// get todo data and render view
+	// WIG1
 	xsvr.get('/wig1', function (req, res) {
 		var data = model1.find({}, function (err, data) {
 			if (err) throw err;
@@ -202,7 +202,29 @@ module.exports = function(xsvr){
 
 
 
-		console.log('controller1 called');
+		console.log('controller1 called wig1');
+	});
+	
+	// DRAG1
+	xsvr.get('/drag1', function (req, res) {
+		var data = model1.find({}, function (err, data) {
+			if (err) throw err;
+			//console.log('into the shoot flyboy');
+			//res.render('view1', {todos: data, todos2: data2});
+
+			var data2 = model2.find({}, function (err, data2) {
+				if (err) throw err;
+				//console.log('into the shoot flyboy');
+				res.render('view_drag1', { todos: data, todos2: data2 });
+
+			});
+
+		});
+
+
+
+
+		console.log('controller1 called drag1');
 	});
 	
 
