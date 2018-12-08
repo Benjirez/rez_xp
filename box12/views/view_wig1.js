@@ -40,6 +40,7 @@ $(document).ready(function(){
   
    $('#form2').on('submit', function(){
 	console.log('submitting 2 yo');
+	
       var item = $('#form2 input');
       var todoX = {item: item.val()};
 
@@ -50,9 +51,11 @@ $(document).ready(function(){
         success: function(data){
           //do something with the data via front-end framework
           location.reload();
+		  //setTimeout( function(){ location.reload(); }, 5000);
         }
+		
       });
-
+	  
       return false;
 
   });

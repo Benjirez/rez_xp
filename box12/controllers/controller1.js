@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extend: false});
 
-var Mousetrap = require('mousetrap');
-var copy = require('clipboard-copy');
+//var Mousetrap = require('mousetrap');
+//var copy = require('clipboard-copy');
 
 mongoose.connect('mongodb://'+ dbcreds.user +':' + dbcreds.pw + '@ds051913.mlab.com:51913/rezdb');
 var model1 = mongoose.model('rez2_collection1', mongoose.Schema({item: String}) ); //todoModel
@@ -17,6 +17,10 @@ var model3 = mongoose.model('quicktext3', mongoose.Schema({title:[], texts: [tex
 
 var model0 = mongoose.model('schematest', mongoose.Schema( {a1: []} ) );
 
+var model_x1 = mongoose.model('collection_x1', mongoose.Schema({
+		col_a: String, col_b: String, col_c: String, col_d: String, col_e: String, 
+		col_f: String, col_g: String, col_h: String, col_i: String, col_j: String
+	}) );
 
 var textOut2 = "";
 
@@ -214,7 +218,26 @@ module.exports = function(xsvr){
 			var data2 = model2.find({}, function (err, data2) {
 				if (err) throw err;
 				//console.log('into the shoot flyboy');
-				res.render('view_drag1', { todos: data, todos2: data2 });
+				res.render('view_drag1', { data: data, data2: data2 });
+
+			});
+
+		});
+
+		console.log('controller1 called route drag1');
+	});
+	
+	// x1
+	xsvr.get('/x1', function (req, res) {
+		var data = model1.find({}, function (err, data) {
+			if (err) throw err;
+			//console.log('into the shoot flyboy');
+			//res.render('view1', {todos: data, todos2: data2});
+
+			var data2 = model2.find({}, function (err, data2) {
+				if (err) throw err;
+				//console.log('into the shoot flyboy');
+				res.render('view_x1', { data: data, data2: data2 });
 
 			});
 

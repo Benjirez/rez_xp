@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>New Tab</title>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
+	<script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+	<script src="jquery.contextMenu.min.js"></script>
+	<script src="views/bundle.js"></script>
+	<script src="views/view_drag1.js"></script>
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div>
+	
+		<!--
+		<div id="c1" class="drag ui-widget-content">
+				<canvas id="demoCanvas" width="60" height="60"></canvas><br>
+				<div id="txOut1" align="center" style="font-size: 10px"></div><br>
+				<div align="center"  style="font-size: 12px"><%= data[0].item %></div> 
+		</div>
+		-->
+		
+		<div id="x1_w1" class="drag scroller ui-widget-content">
+			<form id="form_x1_w1">
+				<!--
+				<input type="text" name="item" placeholder="Column A" required /> 
+				<input type="text" name="item" placeholder="Column B" required /> 
+				<input type="text" name="item" placeholder="Column C" required /> 
+				<input type="text" name="item" placeholder="Column D" required /> 
+				<input type="text" name="item" placeholder="Column E" required />
+				<input type="text" name="item" placeholder="Column F" required /> 
+				<input type="text" name="item" placeholder="Column G" required /> 
+				<input type="text" name="item" placeholder="Column H" required /> 
+				<input type="text" name="item" placeholder="Column I" required /> 
+				<input type="text" name="item" placeholder="Column J" required />
+				-->
+				<div id="div_x1_w1">
+				<textarea name="comment">Enter text here...Enter text here...Entertextere...</textarea>
+				<textarea name="comment">Enter text here...</textarea>
+				<textarea name="comment">Enter text here...</textarea>
+				<textarea name="comment">Enter text here...</textarea>
+				<textarea name="comment">Enter text here...</textarea>
+				<textarea name="comment">Enter text here...</textarea>
+				<textarea name="comment">Enter text here...</textarea>
+				<textarea name="comment">Enter text here...</textarea>
+				<textarea name="comment">Enter text here...</textarea>
+				<textarea name="comment">Enter text here...</textarea>
+				</div>
+				<br>
+				<button type="submit">add</button>
+			</form>
+			<!--
+			<ol class="scroller">
+				<% for(var i=0; i < data.length; i++){ %>
+				<pre><li name="<%= data[i]._id %>"> <button> <%= data[i].item %> </button> </li></pre>
+				<% } %>
+			</ol>
+			-->
+		</div>
+		
+	</div>
+
+</body>
+</html>

@@ -20,27 +20,28 @@
 		
 		<div id="todo-table" class="test" >
 			<div id="drag1" class="ui-widget-content">
-			<form id="form1">
-				<input type="text" name="item" placeholder="rez2_collection1... " required /> 
-				<button type="submit">add</button>
-			</form>
-			<ol>
-				<% for(var i=0; i < todos.length; i++){ %>
-				<pre><li name="<%= todos[i]._id %>"> <%= todos[i].item %></li></pre>
-				<% } %>
-				
-			</ol class="scroller">
+				<form id="form1">
+					<input type="text" name="item" placeholder="rez2_collection1... " required /> 
+					<button type="submit">add</button>
+				</form>
+				<ol class="scroller">
+					<% for(var i=0; i < todos.length; i++){ %>
+					<pre><li name="<%= todos[i]._id %>"> <%= todos[i].item %></li></pre>
+					<% } %>
+					
+				</ol>
 			</div>
+			
 			<div id="drag2" class="ui-widget-content">
-			<form id="form2">
-				<input type="text" name="item" placeholder="rez2_collection2..." required /> 
-				<button type="submit">add</button>
-			</form>
-			<ol class="scroller">
-			<% for(var i=0; i < todos2.length; i++){ %>
-			<pre><li name="<%= todos2[i]._id %>"> <%= todos2[i].item %></li></pre>
-			<% } %>
-			</ol>
+				<form id="form2">
+					<input type="text" name="item" placeholder="rez2_collection2..." required /> 
+					<button type="submit">add</button>
+				</form>
+				<ol class="scroller">
+				<% for(var i=0; i < todos2.length; i++){ %>
+				<pre><li name="<%= todos2[i]._id %>"> <%= todos2[i].item %></li></pre>
+				<% } %>
+				</ol>
 			</div>
 		</div>
 		
