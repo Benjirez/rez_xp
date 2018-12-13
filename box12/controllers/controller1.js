@@ -17,7 +17,7 @@ var model3 = mongoose.model('quicktext3', mongoose.Schema({title:[], texts: [tex
 
 var model0 = mongoose.model('schematest', mongoose.Schema( {a1: []} ) );
 
-var model_x1 = mongoose.model('collection_x1', mongoose.Schema({
+var model_x1 = mongoose.model('model_x1s', mongoose.Schema({
 		col_a: String, col_b: String, col_c: String, col_d: String, col_e: String, 
 		col_f: String, col_g: String, col_h: String, col_i: String, col_j: String
 	}) );
@@ -197,6 +197,8 @@ module.exports = function(xsvr){
 			var data2 = model2.find({}, function (err, data2) {
 				if (err) throw err;
 				//console.log('into the shoot flyboy');
+				
+				xsvr.locals.myData = data;
 				res.render('view_Wig1', { todos: data, todos2: data2 });
 
 			});
@@ -229,19 +231,25 @@ module.exports = function(xsvr){
 	
 	// x1
 	xsvr.get('/x1', function (req, res) {
-		var data = model1.find({}, function (err, data) {
+		var data = model_x1.find({}, function (err, data) {
 			if (err) throw err;
 			//console.log('into the shoot flyboy');
-			//res.render('view1', {todos: data, todos2: data2});
-
+			//xsvr.locals.myData = data;
+			res.render('view_x1', {data: data});
+			});
+			
+			/*
 			var data2 = model2.find({}, function (err, data2) {
 				if (err) throw err;
 				//console.log('into the shoot flyboy');
+				//data = data.replace(/\s/g, '&nbsp;');
 				res.render('view_x1', { data: data, data2: data2 });
 
 			});
-
-		});
+			*/
+			
+			
+		//});
 
 		console.log('controller1 called route drag1');
 	});

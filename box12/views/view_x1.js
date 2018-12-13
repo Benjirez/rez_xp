@@ -4,34 +4,64 @@
 var Mousetrap = rezBundle.Mousetrap;
 var copy = rezBundle.copy;
 
+
 $(document).ready(function(){
+	
+//console.log( myData[0] );	
+//var myData = xsvr.locals.myData; 
+var sel1 = $("#sel1");
+
+sel1.attr("multiple", true).attr("size", 40);
+
+//$("select option[value='0']").attr("selected","selected"); //.changed();
+
+function doIt(){
+	
+		//sel1.selectedIndex
+		selTx = $("#sel1 option:selected").val();
+		//console.log( selTx );
+		$("#colA").html( myData[ selTx ].col_a );
+		$("#colB").html( myData[ selTx ].col_b );
+		$("#colC").html( myData[ selTx ].col_c );
+		$("#colD").html( myData[ selTx ].col_d );
+		$("#colE").html( myData[ selTx ].col_e );
+		$("#colF").html( myData[ selTx ].col_f );
+		$("#colG").html( myData[ selTx ].col_g );
+		$("#colH").html( myData[ selTx ].col_h );
+		$("#colI").html( myData[ selTx ].col_i );
+		$("#colJ").html( myData[ selTx ].col_j );
+	
+}
+
+//sel1.on("change", function() {console.log("nah holmes")} );
+	var selTx;
+
+	sel1.change( doIt );
   
-  /*
-	Mousetrap.bind('1 2 3', function() { 
-	
-		console.log('you pressed one, two and three'); 
-		copy('...this is Chewy and I am making the jump to hyper-space');
-    $("#txOut1").html('...this is Chewy and I am making the jump to hyper-space');
-	});
-	*/
-	//var Mousetrap = require('mousetrap');
-  //$( "#txOut1" ).html("chewy");
-	
-  $( ".drag" ).draggable({ 
-		grid: [ 100, 100 ], 
-		//create: function( event, ui ) { $( "#txOut1" ).html( ui.position.left + ' , ' + ui.position.top ); },
-		drag: function( event, ui ) { $( "#txOut1" ).html( ui.position.left + ' , ' + ui.position.top ); } 
-	
-	});
-	
-	//var c1 = $("#c1").offset();
-	var off1 = $( "#demoCanvas" ).offset();
-	off1.top = 0;  
-	off1.left = 0;
-	$("#txOut1").html( off1.left + ' , ' + off1.top);
-  //$( "#drag2" ).draggable();
-  //$( "#drag3" ).draggable();
+	  $('#add_btn').on('click', function(){
+		console.log('submitting yo');
+		
+		  //var item = $('#form1 input');
+		  var todoX = {item: selTx};
+
+		  $.ajax({
+			type: 'POST',
+			url: '/',
+			data: todoX,
+			success: function(data){
+			  //do something with the data via front-end framework
+			  location.reload();
+			}
+			
+		  });
+
+		  return false;
+		
+	  });
   
+  doIt();
+  
+//$( "#sel1 option:selected"
 /*
   $('#form1').on('submit', function(){
 	console.log('submitting yo');
@@ -51,7 +81,7 @@ $(document).ready(function(){
       return false;
 
   });
-  
+
    $('#form2').on('submit', function(){
 	console.log('submitting 2 yo');
       var item = $('#form2 input');
@@ -80,13 +110,13 @@ $(document).ready(function(){
         success: function(data){
           //do something with the data via front-end framework
           location.reload();
-		  
+
         }
       });
   });
-  
+
   */
-  
+
 	var stage = new createjs.Stage("demoCanvas");
 	var circle = new createjs.Shape();
 	circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 30);

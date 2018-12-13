@@ -1,7 +1,7 @@
 
 body{
     //background: #0d1521;
-	
+
 	//background-image: url("thunderbirdWrite2.png");
 	background-color: #0d1521;
 	background-repeat: no-repeat;
@@ -11,20 +11,41 @@ body{
 	margin: 0px;
 }
 
+#view_x1{
+	background-color: #222222;
+}
+
+#sel1{
+	//white-space: pre;
+    //padding: 2px;
+	margin-right: 2px;
+	margin-bottom: 4px;
+    width: 300px;
+    //border: none;
+    //box-shadow: none;
+    //background-color: blue;
+    //background-image: none;
+}
+
+#sel1 option{
+  font-size: 12px;
+  padding: 2px;
+}
+
 #drag1{ width: 800px; height: 300px; background: #0a0311; padding: 0.5em; border: 2px; border-color: #465465; border-style: solid; margin: 4px; font-size: 14px;}
 
 #drag2{ width: 800px; height: 300px; background: #0a0311; padding: 0.5em; border: 2px; border-color: #465465; border-style: solid; margin: 4px; font-size: 14px;}
 
-#x1_w1{ width: 1238px; height: auto; background: #0a0311; padding: 0.5em; border: 2px; border-color: #465465; border-style: solid; margin: 4px; font-size: 14px;}
+#x1_w1{ width: 1238px; height: auto; background: #444444; padding: 0.5em; border: 2px; border-color: #465465; border-style: solid; margin: 4px; font-size: 14px;}
 
 .drag{
-	width: 60px; 
-	//height: 60px; 
-	//background: #0a0311; 
-	//padding: 10px; 
-	//border: 2px; 
-	//border-color: #465465; 
-	//border-style: solid; 
+	width: 60px;
+	//height: 60px;
+	//background: #0a0311;
+	//padding: 10px;
+	//border: 2px;
+	//border-color: #465465;
+	//border-style: solid;
 	//margin: 4px;
 }
 
@@ -75,10 +96,10 @@ body{
 }
 
 li{
-  
+
 	font-family: arial;
  }
- 
+
 
 .test{
 	float: left;

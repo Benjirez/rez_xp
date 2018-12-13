@@ -2,18 +2,25 @@
 //var copy = require('clipboard-copy');
 var Mousetrap = rezBundle.Mousetrap;
 var copy = rezBundle.copy;
-
+var myHKs = ['12', '123', '1234', 'pp'];
 
 $(document).ready(function(){
 	
-	Mousetrap.bind('1 2 3', function() { 
+	for(let ii of myHKs){
+		let temp = "";
+		for(let vv of ii){
+			temp = temp + vv + " ";
+		}
+		temp = temp + "- =";
+		Mousetrap.bind( temp , function() { 
+		
+			console.log('you pressed: ' + ii ); 
+			copy('...Chewy pressed: ' + ii + ' and is making the jump to hyper-space');
+			$( "#txOut1" ).html( ""+ ii + "!" );
+		  
+		});
 	
-		console.log('you pressed one, two and three'); 
-		copy('...this is Chewy and I am making the jump to hyper-space');
-		$( "#txOut1" ).html( "bang!" );
-	  
-	});
-	
+	}
 	//var Mousetrap = require('mousetrap');
   //$( "#txOut1" ).html("chewy");
 	
