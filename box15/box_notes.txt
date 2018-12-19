@@ -1,0 +1,16 @@
+nodejs app 
+
+Install any modules that need to run in the browser (npm install module)
+browserify these modules (browserify main.js -o bundle.js) Ex. used to convert view1.js into bundle.js which allows the use of nodejs modules in the browser via var module_name = require('module_name');
+Install any modules via --standalone (modifier) that need to run in the browser (npm install module) and can be accessed from other scripts in the browser. 
+browserify these modules (browserify views/rez_bundle1.js --standalone rezBundle > views/bundle.js) Ex. used to convert rezBundle1.js into bundle.js, then <script src="views/bundle.js"></script> and now other scripts can access module.exports of rezBundle as rezBundle.export_var_name, etc
+
+app.js is the entry point
+
+conroller1 sets up routes
+
+view1.ejs loads bundle.js via <script src="views/bundle.js"></script>
+
+use: when browser window has focus, pressing 1, 2, 3 (without much delay) triggers a hotkey (via mousetrap) which them copies to the clipboard (via clipboard-copy) a message from chewbacca... paste to see!
+
+
