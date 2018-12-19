@@ -21,16 +21,13 @@ function doIt(){
 		selTx = $("#sel1 option:selected").val();
 		//console.log( selTx );
 		$("#myTitle").val( myData[ selTx ].col_a );
-		$("#colA").html( myData[ selTx ].col_a );
-		$("#colB").html( myData[ selTx ].col_b );
-		$("#colC").html( myData[ selTx ].col_c );
+		$("#myHK").val( myData[ selTx ].col_b );
+		$("#col2").html( myData[ selTx ].col_c );
 		$("#colD").html( myData[ selTx ].col_d );
 		$("#colE").html( myData[ selTx ].col_e );
 		$("#colF").html( myData[ selTx ].col_f );
 		$("#colG").html( myData[ selTx ].col_g );
 		$("#colH").html( myData[ selTx ].col_h );
-		$("#colI").html( myData[ selTx ].col_i );
-		$("#colJ").html( myData[ selTx ].col_j );
 	
 }
 
@@ -46,8 +43,8 @@ doIt();
 
 			console.log('clearing foo');
 
-			$("#colA").val("");
-			$("#colB").html("");
+			$("#myTitle").val("");
+			$("#myHK").val("");
 			$("#colC").html("");
 			$("#colD").html("");
 			$("#colE").html("");
@@ -69,9 +66,9 @@ doIt();
 		  //var item = $('#form1 input');
 		  var my_x1 = { 
 
-				col_a: $("#colA").val(),
-				col_b: $("#colB").val(),
-				col_c: $("#colC").val(),
+				col_a: $("#myTitle").val(),
+				col_b: $("#myHK").val(),
+				col_c: $("#col2").val(),
 				col_d: $("#colD").val(),
 				col_e: $("#colE").val(),
 				col_f: $("#colF").val(),
