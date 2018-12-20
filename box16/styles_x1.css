@@ -1,0 +1,158 @@
+
+body{
+	
+    //background: #0d1521;
+
+	//background-image: url("thunderbirdWrite2.png");
+	background-color: #0d1521;
+	background-repeat: no-repeat;
+    font-family: arial;
+	font-size: 20px;
+    color: #989898;
+	margin: 0px;
+}
+
+#x1_w1{ width: 98%; height: 880px; background: #444444; padding: 0.5em; border: 2px; border-color: #465465; border-style: solid; margin: 4px; font-size: 14px; position: relative;}
+
+#div_x1_w1{
+	display: inline-block;
+	width: 100%;
+	height: 845px; 
+	white-space: nowrap;
+	overflow: auto;
+}
+
+
+
+#labelSel{
+
+	text-align: left;
+	//margin: auto;
+	height:20px;
+	width: 322px;
+	display: inline-block;
+}
+
+
+#view_x1{
+	background-color: #222222;
+
+}
+
+#sel1{
+
+	margin-right: 2px;
+	margin-bottom: 4px;
+	width: 318px;
+	height: 798px;
+	display: inline-block;
+	
+}
+
+#sel1 option{
+  font-size: 12px;
+  padding: 2px;
+}
+
+
+
+#myTitleDiv{
+
+	width: 380px;
+	height: 20px;
+	margin-bottom: 8px;
+	display: inline-block;
+}
+
+#labelTitle{
+	//margin: auto;
+	text-align: left;
+	display: inline-block;
+}
+
+#myTitle{
+
+	width: 320px;
+	//height: 20px;
+	margin-bottom: 4px;
+	font-family: arial;
+	//display: inline-block;
+}
+
+#myHKDiv{
+
+	width: 158px;
+	height: 20px;
+	margin-bottom: 8px;
+	display: inline-block;
+}
+
+#labelHK{
+	//margin: auto;
+	text-align: left;
+	display: inline-block;
+}
+
+#myHK{
+
+	width: 100px;
+	//height: 20px;
+	margin-bottom: 4px;
+	font-family: arial;
+	//display: inline-block;
+}
+
+#labelMisc{
+	//margin: auto;
+	text-align: left;
+	display: inline-block;
+}
+
+#col1{
+	height: 800px;
+	width: 320px; 
+	display: inline-block;
+	vertical-align: top;
+}
+
+#col2 {
+	width: 600px;
+	height: 792px;
+	margin-right: 2px;
+	margin-bottom: 6px;
+	background-color: #eeeccc;
+}
+
+#col3{
+	height: 775px;
+	width: 285px; 
+	display: inline-block;
+	vertical-align: top;
+}
+
+#col3 textarea {
+	width: 280px;
+	height: 103px;
+	background-color: #eeeccc;
+	//vertical-align: top;
+	//margin-right: 2px;
+	margin-bottom: 6px;
+	font-family: arial;
+}
+
+div.panelBtn{
+	display: inline-block;
+	margin-right: 20px;
+	width: 100px; 
+	//padding-right: 10px;
+}
+
+
+li{
+
+	font-family: arial;
+ }
+ 
+ input.mySrch{
+	width: 282px;
+ }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>New Tab</title>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
+	<script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+	<script src="jquery.contextMenu.min.js"></script>
+	<script src="views/bundle.js"></script>
+	<script>let myData = <%- JSON.stringify( data ) %>;</script>
+	<script src="views/view_x1.js"></script>
+	<link href="styles_x1.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="view_x1">
+
+		<div id="x1_w1">		
+				<div id="div_x1_w1">
+				
+					<div class="row">
+						<div id="labelSel"><b>Select:</b></div>
+						<div id="labelTitle"><b>Title:</b></div>
+						<div id="myTitleDiv"><input type="text" id="myTitle"></div>	
+						<div id="labelHK"><b>HK:</b></div>
+						<div id="myHKDiv"><input type="text" id="myHK"></div>
+						<div id="labelMisc"><b>Misc:</b></div>
+					</div>
+									
+					<div id="col1">
+						<div>
+							<select id="sel1">
+								<!-- <option><%= data %></option> -->
+								<% for(var i=0; i < data.length; i++){ %>
+									<option value="<%- i  %>"><%- data[i].col_a.replace(/\s/g, '&nbsp;') %></option>
+								<% } %>
+							</select>
+						</div>
+						
+					</div>
+					
+					<textarea id="col2"></textarea>
+					
+						<div id="col3">
+							<div>
+							<textarea id="colD"></textarea>
+							</div>
+							<div>
+							<textarea id="colE"></textarea>
+							</div>
+							<div>
+							<textarea id="colF"></textarea>
+							</div>
+							<div>
+							<textarea id="colG"></textarea>
+							</div>
+							<div>
+							<textarea id="colH"></textarea>
+							</div>
+							<div><b>And:</b></div>
+							<div><input class="mySrch" type="text"></div>
+							<div><input class="mySrch" type="text"></div>
+							<div><input class="mySrch" type="text"></div>
+							<div><input class="mySrch" type="text"></div>
+
+							<div><b>Or:</b></div>
+							<div><input class="mySrch" type="text"></div>
+							<div><input class="mySrch" type="text"></div>
+							<div><input class="mySrch" type="text"></div>
+							<div><input class="mySrch" type="text"></div>
+							
+						</div>
+						
+					
+				</div>
+				<div class="panelRow">
+						<div class="panelBtn"><button id="clr_btn">clear</button></div>
+						<div class="panelBtn"><button id="add_btn">add</button></div>
+						<div class="panelBtn"><button id="clr_btn">clear</button></div>
+						<div class="panelBtn"><button id="add_btn">add</button></div>
+					</div>
+			
+		</div>
+
+
+</body>
+</html>
