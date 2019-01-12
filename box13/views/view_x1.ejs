@@ -9,7 +9,7 @@
 	<script src="jquery.contextMenu.min.js"></script>
 	<script src="views/bundle.js"></script>
 	<script>let myData = <%- JSON.stringify( data ) %>;</script>
-	<script src="views/view_x1.js"></script> <!-- NEEDED to access data (as myData) in view_x1.js -->
+	<script src="views/view_x1.js"></script>
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body id="view_x1">
@@ -45,9 +45,11 @@
 					<textarea id="colI"></textarea>
 					<textarea id="colJ"></textarea>
 				</div>
+				</form>
 				<br>
-				<button id="add_btn">add</button>
-			</form>
+				<button id="clr_btn">clear</button> <button id="add_btn">add</button>
+			
+			
 			<!--
 			<ol class="scroller">
 				<% for(var i=0; i < data.length; i++){ %>

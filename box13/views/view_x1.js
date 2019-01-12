@@ -6,31 +6,31 @@ var copy = rezBundle.copy;
 
 
 $(document).ready(function(){
-
-//console.log( myData[0] );
-//var myData = xsvr.locals.myData;
+	
+//console.log( myData[0] );	
+//var myData = xsvr.locals.myData; 
 var sel1 = $("#sel1");
-var selected_id;
 
 sel1.attr("multiple", true).attr("size", 16);
 
 //$("select option[value='0']").attr("selected","selected"); //.changed();
 
 function doIt(){
-
+	
 		//sel1.selectedIndex
 		selTx = $("#sel1 option:selected").val();
-		selected_id = myData[ selTx ]._id;
 		//console.log( selTx );
-		$("#myTitle").val( myData[ selTx ].col_a );
-		$("#myHK").val( myData[ selTx ].col_b );
-		$("#col2").html( myData[ selTx ].col_c );
+		$("#colA").html( myData[ selTx ].col_a );
+		$("#colB").html( myData[ selTx ].col_b );
+		$("#colC").html( myData[ selTx ].col_c );
 		$("#colD").html( myData[ selTx ].col_d );
 		$("#colE").html( myData[ selTx ].col_e );
 		$("#colF").html( myData[ selTx ].col_f );
 		$("#colG").html( myData[ selTx ].col_g );
 		$("#colH").html( myData[ selTx ].col_h );
-
+		$("#colI").html( myData[ selTx ].col_i );
+		$("#colJ").html( myData[ selTx ].col_j );
+	
 }
 
 doIt();
@@ -45,9 +45,9 @@ doIt();
 
 			console.log('clearing foo');
 
-			$("#myTitle").val("");
-			$("#myHK").val("");
-			$("#col2").html("");
+			$("#colA").val("");
+			$("#colB").html("");
+			$("#colC").html("");
 			$("#colD").html("");
 			$("#colE").html("");
 			$("#colF").html("");
@@ -58,19 +58,19 @@ doIt();
 
 	});
 
+	
 
 
-
-
+  
 	  $('#add_btn').on('click', function(){
 		console.log('submitting yo');
-
+		
 		  //var item = $('#form1 input');
-		  var my_x1 = {
+		  var my_x1 = { 
 
-				col_a: $("#myTitle").val(),
-				col_b: $("#myHK").val(),
-				col_c: $("#col2").val(),
+				col_a: $("#colA").val(),
+				col_b: $("#colB").val(),
+				col_c: $("#colC").val(),
 				col_d: $("#colD").val(),
 				col_e: $("#colE").val(),
 				col_f: $("#colF").val(),
@@ -88,29 +88,15 @@ doIt();
 			  //do something with the data via front-end framework
 			  location.reload();
 			}
-
+			
 		  });
 
 		  return false;
-
+		
 	  });
-
-
-		$("#del_btn").on('click', function(){
-	      var item = selected_id; //$("#colH").val(); //$("#myTitle").attr('col_h'); //.replace(/ /g, "-");
-		  console.log(item);
-	      $.ajax({
-	        type: 'DELETE',
-	        url: '/x1' + item,
-	        success: function(data){
-	          //do something with the data via front-end framework
-	          location.reload();
-
-	        }
-	      });
-	  });
-
-
+  
+ 
+  
 //$( "#sel1 option:selected"
 /*
   $('#form1').on('submit', function(){

@@ -9,24 +9,15 @@
 	<script src="jquery.contextMenu.min.js"></script>
 	<script src="views/bundle.js"></script>
 	<script>let myData = <%- JSON.stringify( data ) %>;</script>
-	<script src="views/view_x1.js"></script> <!-- NEEDED to access data (as myData) in view_x1.js -->
-	<link href="styles.css" rel="stylesheet" type="text/css" />
+	<script src="views/view_x1.js"></script>
+	<link href="styles_x1.css" rel="stylesheet" type="text/css" />
 </head>
 <body id="view_x1">
-	<div>
 
-		<!--
-		<div id="c1" class="drag ui-widget-content">
-				<canvas id="demoCanvas" width="60" height="60"></canvas><br>
-				<div id="txOut1" align="center" style="font-size: 10px"></div><br>
-				<div align="center"  style="font-size: 12px"><%= data[0].item %></div>
-		</div>
-		-->
-
-		<div id="x1_w1" class="drag scroller ui-widget-content">
-			<form id="form_x1_w1">
-				
+		<div id="x1_w1">		
 				<div id="div_x1_w1">
+				<div id="titleDiv">
+					Title: <input type="text" id="myTitle"> 
 					<select id="sel1">
 						<!-- <option><%= data %></option> -->
 						<% for(var i=0; i < data.length; i++){ %>
@@ -34,6 +25,8 @@
 						<% } %>
 						
 					</select>
+				</div>
+				<div id="tareaDiv">
 					<textarea id="colA"></textarea>
 					<textarea id="colB"></textarea>
 					<textarea id="colC"></textarea>
@@ -45,18 +38,12 @@
 					<textarea id="colI"></textarea>
 					<textarea id="colJ"></textarea>
 				</div>
+				</div>
 				<br>
-				<button id="add_btn">add</button>
-			</form>
-			<!--
-			<ol class="scroller">
-				<% for(var i=0; i < data.length; i++){ %>
-				<pre><li name="<%= data[i]._id %>"> <button> <%= data[i].item %> </button> </li></pre>
-				<% } %>
-			</ol>
-			-->
+				<button id="clr_btn">clear</button> <button id="add_btn">add</button>
+			
 		</div>
 
-	</div>
+
 </body>
 </html>

@@ -22,14 +22,7 @@ body{
 	overflow: auto;
 }
 
-div.row1{
-	height: 20px;
-	width: 300px; 
-	display: block;
-	
-	vertical-align: top;
-	
-}
+
 
 #labelSel{
 
@@ -147,11 +140,11 @@ div.row1{
 	font-family: arial;
 }
 
-
-button{
-	
-	//margin-bottom: 10px;
-	//margin-right: 10px;
+div.panelBtn{
+	display: inline-block;
+	margin-right: 20px;
+	width: 100px; 
+	//padding-right: 10px;
 }
 
 

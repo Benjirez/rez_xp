@@ -18,12 +18,7 @@ var model3 = mongoose.model('quicktext3', mongoose.Schema({title:[], texts: [tex
 var model0 = mongoose.model('schematest', mongoose.Schema( {a1: []} ) );
 
 var model_x1 = mongoose.model('model_x1s', mongoose.Schema({
-		col_a: String, col_b: String, col_c: String, col_d: String, col_e: String,
-		col_f: String, col_g: String, col_h: String, col_i: String, col_j: String
-	}) );
-	
-var model_x2 = mongoose.model('model_x2s', mongoose.Schema({
-		col_a: String, col_b: String, col_c: String, col_d: String, col_e: String,
+		col_a: String, col_b: String, col_c: String, col_d: String, col_e: String, 
 		col_f: String, col_g: String, col_h: String, col_i: String, col_j: String
 	}) );
 
@@ -50,7 +45,7 @@ function dig(o0){
 			if (o0[o1].name){
 				textOut2 += "<div class='toggler'><b style='color: khaki' style='display:none;'>" + o0[o1].name.__cdata +" </b>";
 				//textOut2 += o0[o1].body  + "<br><br>";
-
+				
 				if (o0[o1].keyword){
 					textOut2 += "<b style='color: lightgreen'> " + o0[o1].keyword.__cdata + " </b><br>";
 					//textOut2 += o0[o1].body  + "<br>";
@@ -59,11 +54,11 @@ function dig(o0){
 					textOut2 += "<div class='toggles' style='display:none;'>" + o0[o1].body.__cdata + "</div><br>";
 					//textOut2 += o0[o1].body  + "<br><br>";
 				}
-
+				
 				textOut2 +=   "</div>";
-
+					
 			}
-
+			
 			//textOut += nestLevel + "Array key: " + o1 + ", val: " + o0[o1] + "<br>";
 			dig( o0[o1] );
 		}
@@ -73,7 +68,7 @@ function dig(o0){
 }
 
 module.exports = function(xsvr){
-
+	
 //route get /ext - sends text
 		xsvr.get('/ext', function(req, res){
 
@@ -190,8 +185,8 @@ module.exports = function(xsvr){
 		});
 		console.log('qt called');
 	});
-
-
+	
+	
 	// WIG1
 	xsvr.get('/wig1', function (req, res) {
 		var data = model1.find({}, function (err, data) {
@@ -202,7 +197,7 @@ module.exports = function(xsvr){
 			var data2 = model2.find({}, function (err, data2) {
 				if (err) throw err;
 				//console.log('into the shoot flyboy');
-
+				
 				xsvr.locals.myData = data;
 				res.render('view_Wig1', { todos: data, todos2: data2 });
 
@@ -214,7 +209,7 @@ module.exports = function(xsvr){
 
 		console.log('controller1 called route wig1');
 	});
-
+	
 	// drag1
 	xsvr.get('/drag1', function (req, res) {
 		var data = model1.find({}, function (err, data) {
@@ -233,7 +228,7 @@ module.exports = function(xsvr){
 
 		console.log('controller1 called route drag1');
 	});
-
+	
 	// x1
 	xsvr.get('/x1', function (req, res) {
 		var data = model_x1.find({}, function (err, data) {
@@ -242,7 +237,7 @@ module.exports = function(xsvr){
 			//xsvr.locals.myData = data;
 			res.render('view_x1', {data: data});
 			});
-
+			
 			/*
 			var data2 = model2.find({}, function (err, data2) {
 				if (err) throw err;
@@ -252,8 +247,8 @@ module.exports = function(xsvr){
 
 			});
 			*/
-
-
+			
+			
 		//});
 
 		console.log('controller1 called route drag1');
@@ -268,97 +263,9 @@ module.exports = function(xsvr){
 			console.log(data);
 		});
 	});
-
-
-	xsvr.delete('/x1:item', function(req, res){
-		//delete requested item from db
-		var myItem = {item: req.params.item};
-		console.log( myItem );
-		model_x1.find( {_id: myItem.item} ).remove(function(err, data){
-			if (err) throw err;
-				//console.log(myItem.item +' '+ data);
-				//model2.find( {_id: myItem.item} ).remove(function(err, data){
-				//if (err) throw err;
-				res.json(data);
-				console.log(myItem.item +' '+ data);
-				//});
-
-		});
-	});
 	
-	
-	
-	// x2 -----------------------------------------------------------------------------------------------
-	
-	xsvr.get('/x2', function (req, res) {
-		var data = model_x2.find({}, function (err, bulkData) {
-			if (err) throw err;
-			//console.log('into the shoot flyboy');
-			var pig = [];
-			var pork = bulkData[1].col_c.match(/<item>.+<\/item>/ig);
-			var tempDesc;
-			var tempHK;
-			var tempTX;
-			for (var i = 0; i < pork.length; i++){
-				if (pork[i].match(/<desc>.+<\/desc>/i)){ tempDesc = pork[i].match(/<desc>.+<\/desc>/i)[0].slice(6, -7); } else {tempDesc = "a";}
-				if (pork[i].match(/<hk>.+<\/hk>/i)){ tempHK = pork[i].match(/<hk>.+<\/hk>/i)[0].slice(4, -5); } else {tempHK = "b";}
-				if (pork[i].match(/<tx>.+<\/tx>/i)){ tempTX = pork[i].match(/<tx>.+<\/tx>/i)[0].slice(4, -5); } else {tempHK = "c";}
-				pig[i] = { "col_a": tempDesc, "col_b": tempHK, "col_c": tempTX, "col_d": "d", "col_e": "e", "col_f": "f", "col_g": "g", "col_h": "h"};
-			}
-			
-			//console.log( pork );
-			//xsvr.locals.myData = data;
-			var data = pig; //bulkData;
-			//var data = bulkData[1].col_c.match(/<tx>/g);
-			res.render('view_x1', {data: data});
-			});
 
-			/*
-			var data2 = model2.find({}, function (err, data2) {
-				if (err) throw err;
-				//console.log('into the shoot flyboy');
-				//data = data.replace(/\s/g, '&nbsp;');
-				res.render('view_x1', { data: data, data2: data2 });
-
-			});
-			*/
-
-
-		//});
-
-		console.log('controller1 called route drag1');
-	});
-
-
-	//create new todoModel with data from req.body, push to db, reload view
-	xsvr.post('/x2', urlencodedParser, function (req, res) {
-		var new_x1 = model_x2(req.body).save(function (err, data) {
-			if (err) throw err;
-			res.json(data);
-			console.log(data);
-		});
-	});
-
-
-	xsvr.delete('/x2:item', function(req, res){
-		//delete requested item from db
-		var myItem = {item: req.params.item};
-		console.log( myItem );
-		model_x2.find( {_id: myItem.item} ).remove(function(err, data){
-			if (err) throw err;
-				//console.log(myItem.item +' '+ data);
-				//model2.find( {_id: myItem.item} ).remove(function(err, data){
-				//if (err) throw err;
-				res.json(data);
-				console.log(myItem.item +' '+ data);
-				//});
-
-		});
-	});
-
-
-
-	// get '/' todo data and render view -----------------------------------------------------------------
+	// get todo data and render view
 	xsvr.get('/', function(req, res){
 		var data = model1.find({}, function(err, data){
 			if (err) throw err;
