@@ -6,7 +6,15 @@ var urlencodedParser = bodyParser.urlencoded({extend: false});
 //var Mousetrap = require('mousetrap');
 //var copy = require('clipboard-copy');
 
+//mongoose.connect('mongodb://'+ dbcreds.user +':' + dbcreds.pw + '@rezcluster0-shard-00-00-dldbs.mongodb.net:27017,rezcluster0-shard-00-01-dldbs.mongodb.net:27017,rezcluster0-shard-00-02-dldbs.mongodb.net:27017/test?ssl=true&replicaSet=RezCluster0-shard-0&authSource=admin&retryWrites=true');
+
+
 mongoose.connect('mongodb://'+ dbcreds.user +':' + dbcreds.pw + '@ds051913.mlab.com:51913/rezdb');
+
+//mongodb://rez:<PASSWORD>@rezcluster0-shard-00-00-dldbs.mongodb.net:27017,rezcluster0-shard-00-01-dldbs.mongodb.net:27017,rezcluster0-shard-00-02-dldbs.mongodb.net:27017/test?ssl=true&replicaSet=RezCluster0-shard-0&authSource=admin&retryWrites=true
+
+
+
 var model1 = mongoose.model('rez2_collection1', mongoose.Schema({item: String}) ); //todoModel
 var model2 = mongoose.model('rez2_collection2', mongoose.Schema({item: String}) ); //todoModel
 //var data = [{item: 'get blue milk'}, {item: "re-attach 3PO's arm"}, {item: 'pickup power converters at toshi station'}];
