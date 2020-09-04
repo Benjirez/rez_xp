@@ -21,7 +21,7 @@
     "clipboard-copy": "^2.0.1",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "mongoose": "3.8.40",
+    "mongoose": "5.10.3",
     "mousetrap": "^1.6.2",
     "regexp-clone": "0.0.1"
   },
