@@ -9,7 +9,9 @@ var urlencodedParser = bodyParser.urlencoded({extend: false});
 //mongoose.connect('mongodb://'+ dbcreds.user +':' + dbcreds.pw + '@rezcluster0-shard-00-00-dldbs.mongodb.net:27017,rezcluster0-shard-00-01-dldbs.mongodb.net:27017,rezcluster0-shard-00-02-dldbs.mongodb.net:27017/test?ssl=true&replicaSet=RezCluster0-shard-0&authSource=admin&retryWrites=true');
 
 
-mongoose.connect('mongodb://'+ dbcreds.user +':' + dbcreds.pw + '@ds051913.mlab.com:51913/rezdb');
+//mongoose.connect('mongodb://'+ dbcreds.user +':' + dbcreds.pw + '@ds051913.mlab.com:51913/rezdb');
+
+mongoose.connect('mongodb+srv://'++ dbcreds.user +':' + dbcreds.pw + '@rezdb.9cpbm.mongodb.net/rezdb?retryWrites=true&w=majority');
 
 //mongodb://rez:<PASSWORD>@rezcluster0-shard-00-00-dldbs.mongodb.net:27017,rezcluster0-shard-00-01-dldbs.mongodb.net:27017,rezcluster0-shard-00-02-dldbs.mongodb.net:27017/test?ssl=true&replicaSet=RezCluster0-shard-0&authSource=admin&retryWrites=true
 
